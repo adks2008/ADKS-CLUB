@@ -4,60 +4,129 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>ADKS Club</title>
 <style>
-body{font-family:Arial;margin:0;background:#f4f4f4}
-header{background:#0b5ed7;color:white;padding:20px;text-align:center}
-nav{background:#222;padding:10px;text-align:center}
-nav a{color:white;margin:10px;text-decoration:none;font-weight:bold}
-section{padding:20px}
-.card{background:white;padding:15px;margin:10px;border-radius:8px;box-shadow:0 2px 5px rgba(0,0,0,0.1)}
-.members{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:10px}
-footer{background:#222;color:white;text-align:center;padding:15px;margin-top:20px}
+body{font-family:Arial;margin:0;background:#0f172a;color:white}
+header{background:#020617;padding:25px;text-align:center;border-bottom:3px solid #38bdf8}
+header h1{margin:0;font-size:28px}
+nav{background:#020617;padding:12px;text-align:center}
+nav a{color:#38bdf8;margin:15px;text-decoration:none;font-weight:bold}
+nav a:hover{color:white}
+section{padding:30px}
+.card{background:#1e293b;padding:18px;margin:10px;border-radius:10px;box-shadow:0 4px 10px rgba(0,0,0,0.4)}
+.members{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:15px}
+.player-card{background:#1e293b;border-radius:12px;padding:15px;text-align:center;cursor:pointer;transition:0.3s}
+.player-card:hover{transform:scale(1.05);background:#334155}
+.player-card img{width:90px;height:90px;border-radius:50%;margin-bottom:10px}
+.match-card{background:#1e293b;border-radius:12px;padding:15px;margin-top:10px}
+footer{background:#020617;color:white;text-align:center;padding:20px;margin-top:30px}
+.modal{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.7);align-items:center;justify-content:center}
+.modal-content{background:#1e293b;padding:25px;border-radius:12px;width:300px;text-align:center}
+.close{cursor:pointer;color:#38bdf8;font-size:20px}
 </style>
 </head>
 <body><header>
 <h1>ADKS - Alor Dishari Krira Songha</h1>
-<p>ESTD: 2008</p>
+<p>ESTD: 2008 | Official Club Website</p>
 </header><nav>
 <a href="#home">Home</a>
-<a href="#members">Members</a>
-<a href="#matches">Match Schedule</a>
-<a href="#summary">Match Summary</a>
+<a href="#members">Players</a>
+<a href="#matches">Fixtures</a>
+<a href="#summary">Results</a>
+<a href="#stats">Statistics</a>
 </nav><section id="home">
 <div class="card">
-<h2>Welcome to ADKS Club</h2>
-<p>This website stores player information, match schedules and match summaries.</p>
-</div>
-</section><section id="members">
-<h2>Club Members</h2>
-<div class="members"><div class="card">
-<h3>Anik</h3>
-<p>Role: Left Handed Batsman</p>
-<p>Join Year: 2023</p>
-</div><div class="card">
-<h3>Player 2</h3>
-<p>Role: Bowler</p>
-<p>Join Year: 2022</p>
-</div><div class="card">
-<h3>Player 3</h3>
-<p>Role: All Rounder</p>
-<p>Join Year: 2021</p>
-</div></div>
-</section><section id="matches">
-<h2>Match Schedule</h2>
-<div class="card">
+<h2>Welcome to ADKS Cricket Club</h2>
+<p>This is the official website of ADKS. Here you can see player profiles, upcoming matches, match results and team statistics.</p>
+</div><div class="match-card">
+<h3>Upcoming Match</h3>
+<p>ADKS vs Rising Star</p>
 <p>Date: 20 March 2026</p>
-<p>Opponent: Rising Star Club</p>
 <p>Venue: Local Cricket Ground</p>
 </div>
-</section><section id="summary">
-<h2>Match Summary</h2>
-<div class="card">
-<p>Total Runs: 156</p>
-<p>Wickets: 7</p>
-<p>Man of the Match: Anik</p>
-<p>Result: ADKS won by 25 runs.</p>
+</section><section id="members">
+<h2>Team Squad</h2>
+<div class="members"><div class="player-card" onclick="openPlayer('anik')">
+<img src="https://via.placeholder.com/100">
+<h3>Anik</h3>
+<p>Left Hand Batsman</p>
+</div><div class="player-card" onclick="openPlayer('rahim')">
+<img src="https://via.placeholder.com/100">
+<h3>Rahim</h3>
+<p>Fast Bowler</p>
+</div><div class="player-card" onclick="openPlayer('karim')">
+<img src="https://via.placeholder.com/100">
+<h3>Karim</h3>
+<p>All Rounder</p>
+</div></div>
+</section><section id="matches">
+<h2>Match Fixtures</h2>
+<div class="match-card">
+<p>ADKS vs Rising Star</p>
+<p>Date: 20 March 2026</p>
+<p>Time: 3:00 PM</p>
+</div><div class="match-card">
+<p>ADKS vs Tiger Club</p>
+<p>Date: 25 March 2026</p>
+<p>Time: 2:30 PM</p>
 </div>
-</section><footer>
-<p>© 2026 ADKS Club</p>
-</footer></body>
+</section><section id="summary">
+<h2>Latest Match Result</h2>
+<div class="match-card">
+<p>ADKS: 156/7</p>
+<p>Rising Star: 131/10</p>
+<p>ADKS won by 25 runs</p>
+<p>Man of the Match: Anik (72 Runs)</p>
+</div>
+</section><section id="stats">
+<h2>Team Statistics</h2>
+<div class="card">
+<p>Top Run Scorer: Anik - 350 runs</p>
+<p>Top Wicket Taker: Rahim - 18 wickets</p>
+<p>Total Matches: 25</p>
+<p>Matches Won: 17</p>
+</div>
+</section><div id="playerModal" class="modal">
+<div class="modal-content">
+<span class="close" onclick="closePlayer()">✖</span>
+<h2 id="playerName"></h2>
+<p id="playerRole"></p>
+<p id="playerStats"></p>
+</div>
+</div><footer>
+<p>© 2026 ADKS Club | All Rights Reserved</p>
+</footer><script>
+function openPlayer(player){
+
+let name="";
+let role="";
+let stats="";
+
+if(player==='anik'){
+name="Anik";
+role="Left Handed Batsman";
+stats="Matches: 20 | Runs: 350 | Highest: 92";
+}
+
+if(player==='rahim'){
+name="Rahim";
+role="Fast Bowler";
+stats="Matches: 18 | Wickets: 28 | Best: 4/21";
+}
+
+if(player==='karim'){
+name="Karim";
+role="All Rounder";
+stats="Matches: 15 | Runs: 210 | Wickets: 12";
+}
+
+document.getElementById("playerName").innerText=name;
+document.getElementById("playerRole").innerText=role;
+document.getElementById("playerStats").innerText=stats;
+
+document.getElementById("playerModal").style.display="flex";
+}
+
+function closePlayer(){
+document.getElementById("playerModal").style.display="none";
+}
+</script></body>
 </html>
